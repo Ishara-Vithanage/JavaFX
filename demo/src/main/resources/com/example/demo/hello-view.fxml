@@ -3,17 +3,27 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="241.0" prefWidth="319.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+<VBox fx:id="userName" alignment="CENTER" prefHeight="241.0" prefWidth="319.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+    
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
+    <Pane prefHeight="144.0" prefWidth="279.0">
+        <Label fx:id="welcomeText" layoutX="27.0" layoutY="12.0" prefHeight="17.0" prefWidth="100.0" text="Welcome" textAlignment="JUSTIFY">
+          <font>
+              <Font size="22.0" />
+          </font>
+        </Label>
+        <Label layoutX="27.0" layoutY="74.0" text="User Name: " />
+        <Label layoutX="27.0" layoutY="113.0" text="Password: " />
+      <TextField layoutX="96.0" layoutY="70.0" />
+      <TextField layoutX="96.0" layoutY="109.0" />
+    </Pane>
+   <Button fx:id="helloButton" mnemonicParsing="false" onAction="#onHelloButtonClick" text="Sign in" />
 
-    <Label fx:id="welcomeText" prefHeight="32.0" prefWidth="263.0" text="Welcome" textAlignment="JUSTIFY">
-      <font>
-         <Font size="22.0" />
-      </font></Label>
-    <Button onAction="#onHelloButtonClick" text="Hello!" />
 </VBox>
