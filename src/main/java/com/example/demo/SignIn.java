@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 
 public class SignIn {
 
-    public Button helloButton;
     public VBox userName;
     public Button signupButton;
     public Button signinButton;
@@ -20,7 +19,7 @@ public class SignIn {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        welcomeText.setText("Coming Soon!");
     }
 
     public void openSignup() {

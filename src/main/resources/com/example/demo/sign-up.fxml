@@ -10,41 +10,43 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="userName" alignment="CENTER" prefHeight="597.0" prefWidth="581.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SignIn">
+<VBox fx:id="userName" alignment="CENTER" prefHeight="597.0" prefWidth="581.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SignUp">
 
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
 
    <Pane prefHeight="688.0" prefWidth="541.0">
-      <Label layoutX="21.0" layoutY="14.0" text="Welcome">
+      <Label layoutX="34.0" layoutY="20.0" text="Welcome">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
       <Label layoutX="35.0" layoutY="80.0" text="First Name" />
-      <TextField layoutX="35.0" layoutY="105.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="firstName" layoutX="35.0" layoutY="105.0" prefHeight="25.0" prefWidth="195.0" />
       <Label layoutX="289.0" layoutY="80.0" text="Last Name" />
-      <TextField layoutX="289.0" layoutY="105.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="lastName" layoutX="289.0" layoutY="105.0" prefHeight="25.0" prefWidth="195.0" />
       <Label layoutX="35.0" layoutY="145.0" text="Date of Birth" />
-      <DatePicker layoutX="35.0" layoutY="170.0" prefHeight="25.0" prefWidth="195.0" />
+      <DatePicker fx:id="dateofBirth" layoutX="35.0" layoutY="170.0" prefHeight="25.0" prefWidth="195.0" />
       <Label layoutX="289.0" layoutY="144.0" text="Gender" />
-      <RadioButton layoutX="289.0" layoutY="173.0" mnemonicParsing="false" text="Male" />
-      <RadioButton layoutX="366.0" layoutY="173.0" mnemonicParsing="false" text="Female" />
+      <RadioButton fx:id="maleRadio" layoutX="289.0" layoutY="173.0" mnemonicParsing="false" onAction="#initializeGenderInputs" text="Male" />
+      <RadioButton fx:id="femaleRadio" layoutX="366.0" layoutY="173.0" mnemonicParsing="false" onAction="#initializeGenderInputs" text="Female" />
       <Label layoutX="35.0" layoutY="210.0" text="Civil Status" />
-      <TextField layoutX="35.0" layoutY="235.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="civilStatus" layoutX="35.0" layoutY="235.0" prefHeight="25.0" prefWidth="195.0" />
       <Label layoutX="289.0" layoutY="210.0" text="Country" />
-      <TextField layoutX="289.0" layoutY="235.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="country" layoutX="289.0" layoutY="235.0" prefHeight="25.0" prefWidth="195.0" />
       <Label layoutX="35.0" layoutY="275.0" text="Email" />
-      <TextField layoutX="35.0" layoutY="300.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="email" layoutX="35.0" layoutY="300.0" prefHeight="25.0" prefWidth="195.0" />
       <Label layoutX="289.0" layoutY="275.0" text="Mobile" />
-      <TextField layoutX="289.0" layoutY="300.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="mobileNumber" layoutX="289.0" layoutY="300.0" prefHeight="25.0" prefWidth="195.0" />
       <Label layoutX="35.0" layoutY="379.0" text="Username" />
-      <TextField layoutX="35.0" layoutY="404.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="username" layoutX="35.0" layoutY="404.0" prefHeight="25.0" prefWidth="195.0" />
       <Label layoutX="288.0" layoutY="380.0" text="Password" />
-      <TextField layoutX="288.0" layoutY="404.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="password" layoutX="288.0" layoutY="404.0" prefHeight="25.0" prefWidth="195.0" />
       <Label layoutX="35.0" layoutY="444.0" text="Confirm Password" />
-      <TextField layoutX="35.0" layoutY="468.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="confirmPassword" layoutX="35.0" layoutY="468.0" prefHeight="25.0" prefWidth="195.0" />
       <Button layoutX="432.0" layoutY="511.0" mnemonicParsing="false" text="Sign up" />
+      <Button fx:id="clearButton" layoutX="360.0" layoutY="511.0" mnemonicParsing="false" onAction="#clearButtonClick" prefHeight="25.0" prefWidth="56.0" text="Clear" />
+      <Button fx:id="backtoSigninButton" layoutX="36.0" layoutY="511.0" mnemonicParsing="false" onAction="#backtoSigninClick" text="Back" />
    </Pane>
 </VBox>
