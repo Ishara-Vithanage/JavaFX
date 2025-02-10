@@ -1,28 +1,43 @@
 package com.example.demo;
 
-import javafx.event.ActionEvent;
-import javafx.scene.control.*;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 public class SignUp {
 
+    @FXML
     public Button backtoSigninButton;
+    @FXML
     public Button clearButton;
+    @FXML
     public TextField firstName;
+    @FXML
     public TextField lastName;
+    @FXML
     public DatePicker dateofBirth;
+    @FXML
     public RadioButton maleRadio;
+    @FXML
     public RadioButton femaleRadio;
+    @FXML
     public TextField civilStatus;
+    @FXML
     public TextField country;
+    @FXML
     public TextField email;
+    @FXML
     public TextField mobileNumber;
+    @FXML
     public TextField username;
+    @FXML
     public TextField password;
+    @FXML
     public TextField confirmPassword;
+
     private ToggleGroup genderGroup;
 
     public void backtoSigninClick() {
@@ -38,21 +53,27 @@ public class SignUp {
             e.printStackTrace();
         }
     }
-
-    public void initializeGenderInputs() {
-        // Initialize radio buttons
-        maleRadio = new RadioButton("Male");
-        femaleRadio = new RadioButton("Female");
-
-        // Create and set ToggleGroup
+    // This method is automatically called when the FXML file is loaded.
+    @FXML
+    public void initialize() {
+        // Set up ToggleGroup for gender selection
         genderGroup = new ToggleGroup();
         maleRadio.setToggleGroup(genderGroup);
         femaleRadio.setToggleGroup(genderGroup);
 
-        // Optional: Set default selection
+        // Optional: Set default selection for Male
         maleRadio.setSelected(true);
+
+        // Add a listener to handle gender selection changes (optional)
+        genderGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                RadioButton selectedRadio = (RadioButton) newValue;
+                System.out.println("Selected gender: " + selectedRadio.getText());
+            }
+        });
     }
 
+    // Method to get selected gender as a string
     public String getSelectedGender() {
         RadioButton selectedRadioButton = (RadioButton) genderGroup.getSelectedToggle();
         if (selectedRadioButton != null) {
@@ -61,19 +82,8 @@ public class SignUp {
         return null; // or return a default value like "Not specified"
     }
 
-    public void handleGenderSelection() {
-        String selectedGender = getSelectedGender();
-        if (selectedGender != null) {
-            System.out.println("Selected gender: " + selectedGender);
-            // Add your logic here based on the selected gender
-            if (selectedGender.equals("Male")) {
-                // Handle male selection
-            } else if (selectedGender.equals("Female")) {
-                // Handle female selection
-            }
-        }
-    }
-
+    // Clear all input fields when "Clear" button is clicked
+    @FXML
     public void clearButtonClick() {
         firstName.clear();
         lastName.clear();
@@ -84,5 +94,9 @@ public class SignUp {
         username.clear();
         password.clear();
         confirmPassword.clear();
+
+        // Reset gender selection to default (Male)
+        maleRadio.setSelected(true);
     }
+
 }

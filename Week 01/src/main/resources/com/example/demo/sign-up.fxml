@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="userName" alignment="CENTER" prefHeight="597.0" prefWidth="581.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SignUp">
+<VBox fx:id="signup" alignment="CENTER" prefHeight="597.0" prefWidth="581.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SignUp">
 
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -29,8 +29,8 @@
       <Label layoutX="35.0" layoutY="145.0" text="Date of Birth" />
       <DatePicker fx:id="dateofBirth" layoutX="35.0" layoutY="170.0" prefHeight="25.0" prefWidth="195.0" />
       <Label layoutX="289.0" layoutY="144.0" text="Gender" />
-      <RadioButton fx:id="maleRadio" layoutX="289.0" layoutY="173.0" mnemonicParsing="false" onAction="#initializeGenderInputs" text="Male" />
-      <RadioButton fx:id="femaleRadio" layoutX="366.0" layoutY="173.0" mnemonicParsing="false" onAction="#initializeGenderInputs" text="Female" />
+      <RadioButton fx:id="maleRadio" layoutX="289.0" layoutY="173.0" mnemonicParsing="false" text="Male" />
+      <RadioButton fx:id="femaleRadio" layoutX="366.0" layoutY="173.0" mnemonicParsing="false" text="Female" />
       <Label layoutX="35.0" layoutY="210.0" text="Civil Status" />
       <TextField fx:id="civilStatus" layoutX="35.0" layoutY="235.0" prefHeight="25.0" prefWidth="195.0" />
       <Label layoutX="289.0" layoutY="210.0" text="Country" />
