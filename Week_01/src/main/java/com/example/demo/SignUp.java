@@ -53,18 +53,14 @@ public class SignUp {
             e.printStackTrace();
         }
     }
-    // This method is automatically called when the FXML file is loaded.
     @FXML
     public void initialize() {
-        // Set up ToggleGroup for gender selection
         genderGroup = new ToggleGroup();
         maleRadio.setToggleGroup(genderGroup);
         femaleRadio.setToggleGroup(genderGroup);
 
-        // Optional: Set default selection for Male
         maleRadio.setSelected(true);
 
-        // Add a listener to handle gender selection changes (optional)
         genderGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 RadioButton selectedRadio = (RadioButton) newValue;
@@ -73,16 +69,14 @@ public class SignUp {
         });
     }
 
-    // Method to get selected gender as a string
     public String getSelectedGender() {
         RadioButton selectedRadioButton = (RadioButton) genderGroup.getSelectedToggle();
         if (selectedRadioButton != null) {
             return selectedRadioButton.getText();
         }
-        return null; // or return a default value like "Not specified"
+        return null;
     }
 
-    // Clear all input fields when "Clear" button is clicked
     @FXML
     public void clearButtonClick() {
         firstName.clear();
@@ -94,9 +88,8 @@ public class SignUp {
         username.clear();
         password.clear();
         confirmPassword.clear();
-
-        // Reset gender selection to default (Male)
         maleRadio.setSelected(true);
+        dateofBirth.setValue(null);
     }
 
 }

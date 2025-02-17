@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="510.0" prefWidth="411.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.week_02.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Pane prefHeight="165.0" prefWidth="10.0">
+        <TextField fx:id="nameTextInput" layoutX="18.0" layoutY="10.0" prefHeight="23.0" prefWidth="241.0" />
+        <Button fx:id="clickmeButton" layoutX="195.0" layoutY="49.0" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="61.0" text="Click Me" />
+        <Button fx:id="clearButton" layoutX="129.0" layoutY="49.0" onAction="#onClearButtonClick" prefHeight="25.0" prefWidth="55.0" text="Clear" />
+
+        <Label fx:id="welcomeText" layoutX="18.0" layoutY="53.0" prefHeight="17.0" prefWidth="99.0">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+    </Pane>
+    <Pane prefHeight="127.0" prefWidth="202.0">
+        <Button fx:id="cmdInputButton" layoutX="104.0" layoutY="14.0" mnemonicParsing="false" onAction="#onCmdInputButtonClick" text="Input Click" />
+      <Label fx:id="cmdText" layoutX="14.0" layoutY="47.0" prefHeight="12.0" prefWidth="133.0" />
+      <Button fx:id="cmdOutputButton" layoutX="177.0" layoutY="14.0" mnemonicParsing="false" onAction="#onCmdOutputButtonClick" text="Output Click" />
+    </Pane>
+   <Pane prefHeight="144.0" prefWidth="371.0">
+      <children>
+         <TextField fx:id="firstNumInput" layoutX="14.0" layoutY="21.0" promptText="Enter first number" />
+         <TextField fx:id="secondNumInput" layoutX="208.0" layoutY="21.0" promptText="Enter second number" />
+         <Button fx:id="calculateSumButton" layoutX="317.0" layoutY="59.0" mnemonicParsing="false" onAction="#calculateSumButtonClick" text="Sum" />
+         <Label fx:id="sumLabel" layoutX="194.0" layoutY="84.0" />
+      </children>
+   </Pane>
+</VBox>
