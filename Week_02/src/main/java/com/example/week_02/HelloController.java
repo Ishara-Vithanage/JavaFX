@@ -98,7 +98,7 @@ public class HelloController {
         }
         else {
             int sum = Integer.parseInt(firstNumInput.getText()) + Integer.parseInt(secondNumInput.getText());
-            sumLabel.setText(String.valueOf(sum));
+            sumLabel.setText("Sum is " + String.valueOf(sum));
         }
 
     }
